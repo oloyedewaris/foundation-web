@@ -1,0 +1,8 @@
+@media (min-width: 768px) {
+  .blog-entry .text {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: -0 !important;
+    background: #fff;
+  }
+}
