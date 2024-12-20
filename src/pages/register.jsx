@@ -52,7 +52,7 @@ export default function Register() {
         isClosable: true,
       });
       formik.resetForm();
-      navigate("/admin");
+      navigate("/login");
     },
     onError: (err) => {
       toast({
