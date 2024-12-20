@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import useLocalStorage from "../utils/useLocalStorage";
-import { Image } from "@chakra-ui/react";
+import { Box, Center, Image, Text } from "@chakra-ui/react";
 import logo from "../assets/images/logo.png";
 
 const Navbar = () => {
@@ -13,18 +13,19 @@ const Navbar = () => {
       id="ftco-navbar"
     >
       <div className="container" style={{ paddingTop: "10px" }}>
-        <Image
-          mr={{ base: "3px", md: "10px" }}
-          mt="-15px"
-          w="50px"
-          h="auto"
-          src={logo}
-        />
+        <Center
+          borderRadius={"8px"}
+          bg="#fff"
+          mr={{ base: "0px", md: "10px" }}
+          p="5px"
+        >
+          <Image boxSize={{ base: "56px", md: "70px" }} src={logo} />
+        </Center>
         <a className="navbar-brand" href="/">
-          <p style={{ textAlign: "center !importsnt" }}>
+          <Text textAlign={"center"} fontSize={{ base: "16px", md: "18px" }}>
             Adebisi Akande <br />
             FOUNDATION
-          </p>
+          </Text>
         </a>
         <button
           className="navbar-toggler"

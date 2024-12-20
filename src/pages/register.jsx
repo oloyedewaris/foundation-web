@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Heading,
-  VStack,
-  AbsoluteCenter,
-  useToast,
-  Center,
-} from "@chakra-ui/react";
+import { Button, Heading, VStack, useToast, Center } from "@chakra-ui/react";
 import { useMutation } from "react-query";
 import { registerApi } from "../api/auth";
 import { useFormik } from "formik";
