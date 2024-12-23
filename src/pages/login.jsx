@@ -52,7 +52,7 @@ export default function Login() {
         "SignedInUser",
         JSON.stringify(res?.data?.data?.user)
       );
-      navigate("/");
+      navigate("/admin");
     },
     onError: (err) => {
       toast({

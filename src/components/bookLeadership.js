@@ -66,8 +66,8 @@ const BookLeadership = ({ isOpen, leadership, onClose }) => {
       first_name: "",
       email: "",
       phone_number: "",
-      image: "",
-      cv: "",
+      image: "bjk.",
+      cv: "ghfjkv",
     },
     validationSchema: leadershipSchema,
     onSubmit: (values) => {
@@ -142,10 +142,10 @@ const BookLeadership = ({ isOpen, leadership, onClose }) => {
           <HStack w="full" justify={"space-between"}>
             <CloseIcon fontSize={"20px"} onClick={onClose} />
           </HStack>
-          <h3 className="heading mb-4">Register for Leadership</h3>
+          <h3 className="heading mb-4">Apply for Leadership Program</h3>
           <form onSubmit={formik.handleSubmit} style={{ width: "100%" }}>
             <VStack spacing={4} w="full">
-              <h5 className="">Profile Image</h5>
+              <h5 className="">Profile Picture</h5>
               <Center
                 h="140px"
                 w="200px"

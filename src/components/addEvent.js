@@ -34,7 +34,7 @@ const AddEvent = ({ isOpen, onOpen, onClose }) => {
     image: Yup.string().required("required"),
     description: Yup.string().required("required"),
     dateAndTime: Yup.string().required("required"),
-    duration: Yup.string().required("required"),
+    capacity: Yup.string().required("required"),
     venue: Yup.string().required("required"),
   });
 
@@ -68,6 +68,7 @@ const AddEvent = ({ isOpen, onOpen, onClose }) => {
       description: "",
       dateAndTime: "",
       duration: "",
+      capacity: "",
       venue: "",
     },
     validationSchema: eventSchema,
@@ -122,7 +123,7 @@ const AddEvent = ({ isOpen, onOpen, onClose }) => {
           <HStack w="full" justify={"space-between"}>
             <CloseIcon fontSize={"20px"} onClick={onClose} />
           </HStack>
-          <h3 className="heading mb-4">Create Event</h3>
+          <h3 className="heading mb-4">Create new Event</h3>
           <form onSubmit={formik.handleSubmit} style={{ width: "100%" }}>
             <VStack spacing={4} w="full">
               <Center
@@ -169,19 +170,29 @@ const AddEvent = ({ isOpen, onOpen, onClose }) => {
                 onChange={(e) => formik.handleChange("venue")(e.target.value)}
                 placeholder="Event Venue"
               />
+              <FormInput
+                id="dateAndTime"
+                type="datetime-local"
+                value={formik.values.dateAndTime}
+                onBlur={formik.handleBlur}
+                error={formik.touched.dateAndTime && formik.errors.dateAndTime}
+                onChange={(e) =>
+                  formik.handleChange("dateAndTime")(e.target.value)
+                }
+                placeholder="Event Time"
+                label="Event date and time"
+              />
               <Flex direction="row" gap="12px" w="full">
                 <FormInput
-                  id="dateAndTime"
-                  type="datetime-local"
-                  value={formik.values.dateAndTime}
+                  id="capacity"
+                  type="number"
+                  value={formik.values.capacity}
                   onBlur={formik.handleBlur}
-                  error={
-                    formik.touched.dateAndTime && formik.errors.dateAndTime
-                  }
+                  error={formik.touched.capacity && formik.errors.capacity}
                   onChange={(e) =>
-                    formik.handleChange("dateAndTime")(e.target.value)
+                    formik.handleChange("capacity")(e.target.value)
                   }
-                  placeholder="Event Time"
+                  placeholder="Event Capacity"
                 />
                 <FormInput
                   id="duration"

@@ -14,12 +14,14 @@ import Register from "./pages/register";
 import AdminEvent from "./pages/admin-event";
 import Leaderships from "./pages/leaderships";
 import AdminLeadership from "./pages/admin-leadership";
+import OurWork from "./pages/ourWork";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<Homepage />} />
       <Route path="/about" element={<About />} />
+      <Route path="/our-work" element={<OurWork />} />
       <Route path="/news" element={<News />} />
       <Route path="/events" element={<Events />} />
       <Route path="/leaderships" element={<Leaderships />} />

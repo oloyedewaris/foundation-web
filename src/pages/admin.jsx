@@ -15,15 +15,15 @@ const Admin = () => {
 
   const adminActs = [
     {
-      heading: "Foundation Events",
-      body: "You can add new record for future events",
-      btnText: "View",
+      heading: "Events",
+      body: "You can create new record for future foundation events",
+      btnText: "CREATE",
       onClick: () => onOpen(),
     },
     {
       heading: "Leadership Programs",
       body: "You can create a new and manage leadership program",
-      btnText: "View",
+      btnText: "CREATE",
       onClick: () => leadershiponOpen(),
     },
   ];

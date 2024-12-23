@@ -56,7 +56,7 @@ const Leaderships = () => {
                     style={{ cursor: "pointer", color: "#f86f2d" }}
                     onClick={() => navigate(`/admin-leadership/${doc._id}`)}
                   >
-                    View Applications <i className="ion-ios-arrow-forward"></i>
+                    View Applicants <i className="ion-ios-arrow-forward"></i>
                   </p>
                 )}
               </div>

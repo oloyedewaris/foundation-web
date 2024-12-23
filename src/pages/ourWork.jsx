@@ -1,6 +1,6 @@
 import Layout from "../components/layout";
 
-const Home = () => {
+const OurWork = () => {
   return (
     <Layout>
       <div
@@ -635,4 +635,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default OurWork;

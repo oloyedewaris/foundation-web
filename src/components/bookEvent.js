@@ -38,6 +38,7 @@ const BookEvent = ({ isOpen, event, onClose }) => {
       onClose();
     },
     onError: (err) => {
+      console.log("err?.response?.data", err?.response?.data);
       toast({
         title: "Operation failed",
         description: `${err?.response?.data?.message}`,

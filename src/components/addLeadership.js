@@ -35,6 +35,7 @@ const AddLeadership = ({ isOpen, onOpen, onClose }) => {
     description: Yup.string().required("required"),
     startDate: Yup.string().required("required"),
     endDate: Yup.string().required("required"),
+    capacity: Yup.string().required("required"),
   });
 
   const eventMutation = useMutation(addLeadershipApi, {
@@ -67,6 +68,7 @@ const AddLeadership = ({ isOpen, onOpen, onClose }) => {
       description: "",
       startDate: "",
       endDate: "",
+      capacity: "",
     },
     validationSchema: eventSchema,
     onSubmit: (values) => {
@@ -120,7 +122,7 @@ const AddLeadership = ({ isOpen, onOpen, onClose }) => {
           <HStack w="full" justify={"space-between"}>
             <CloseIcon fontSize={"20px"} onClick={onClose} />
           </HStack>
-          <h3 className="heading mb-4">Add a Leadership Program</h3>
+          <h3 className="heading mb-4">Create a new Leadership Program</h3>
           <form onSubmit={formik.handleSubmit} style={{ width: "100%" }}>
             <VStack spacing={4} w="full">
               <Center
@@ -157,6 +159,17 @@ const AddLeadership = ({ isOpen, onOpen, onClose }) => {
                 onChange={(e) => formik.handleChange("title")(e.target.value)}
                 placeholder="Leadership Title"
               />
+              <FormInput
+                id="capacity"
+                type="number"
+                value={formik.values.capacity}
+                onBlur={formik.handleBlur}
+                error={formik.touched.capacity && formik.errors.capacity}
+                onChange={(e) =>
+                  formik.handleChange("capacity")(e.target.value)
+                }
+                placeholder="Maximum No. of Applicants"
+              />
 
               <Flex direction="row" gap="12px" w="full">
                 <FormInput
@@ -168,7 +181,8 @@ const AddLeadership = ({ isOpen, onOpen, onClose }) => {
                   onChange={(e) =>
                     formik.handleChange("startDate")(e.target.value)
                   }
-                  placeholder="Leadership Time"
+                  placeholder="Application Start Time"
+                  label="Application Start's by"
                 />
                 <FormInput
                   id="endDate"
@@ -179,9 +193,11 @@ const AddLeadership = ({ isOpen, onOpen, onClose }) => {
                   onChange={(e) =>
                     formik.handleChange("endDate")(e.target.value)
                   }
-                  placeholder="Leadership Duration (Hrs)"
+                  placeholder="Application End Time"
+                  label="Application End's at"
                 />
               </Flex>
+
               <FormTextarea
                 id="description"
                 type="text"
