@@ -79,7 +79,7 @@ const Navbar = () => {
               }`}
             >
               <a href="/leaderships" className="nav-link">
-                Leadership Programs
+                Entrepreneurship Program
               </a>
             </li>
             <li

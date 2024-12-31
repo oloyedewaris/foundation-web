@@ -9747,8 +9747,8 @@ h5,
 
 .hero-wrap {
   width: 100%;
-  height: calc(100vh - 117px);
-  min-height: 700px;
+  height: calc(70vh - 117px);
+  min-height: 400px;
   position: relative;
 }
 .hero-wrap.hero-wrap-2 {

@@ -76,47 +76,57 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="ftco-section">
+      {/* <section className="ftco-section">
         <div className="container-fluid">
           <div className="row justify-content-center mb-5 pb-3">
-            <div className="col-md-9 heading-section ftco-animate text-center">
-              <h2 className="mb-4">Why the Foundation</h2>
+            <div className="col-md-6 heading-section ftco-animate text-left">
+              <h2 className="mb-4 text-center">Why the Foundation</h2>
               <p>
-                Nigeria is made up of a diverse but relatively young population.
-                It is estimated that 60 per cent of Nigeria's population is
-                under the age of 25, making it one of the youngest countries in
-                Africa. While this should ordinarily be an advantage, however,
-                the youth population in Nigeria is faced with many challenges.
-                For example, as of 2020, around 68 per cent of the young people
-                in Nigeria had secondary education as their highest educational
-                level. This also has implications for the youth unemployment
-                rate, which has been increasing steadily since 2015, and as of
-                2021, stood at 19.6% (ILO, 2023). An earlier report by the
-                National Bureau of Statistics (NBS) indicated that about 53% of
-                151 million Nigerian youths, numbering over 80 million, are
-                unemployed, making Nigeria the second-highest number of
-                unemployed youths in the world (Foundation for Investigative
-                Journalism, 2023). Several factors ranging from a large
-                population, lack of jobs, and deficient school curricula, among
-                others, have been given for the high unemployment figures
-                (Akande, 2014). The consequences of rising crime in the country
-                cannot be overemphasized (Ayinla and Ogunmeru, 2018), with 70%
-                of Nigeria's Youth said to be involved in crime as a result of
-                poverty and lack of economic opportunities. According to
-                Dambazau (2007) and Adebayo ( 2013), the nature of these crimes
-                includes armed robbery, murder, rape, car theft, burglary,
-                fraud, bribery and corruption, food and drug adulteration,
-                gambling, smuggling, human trafficking, kidnapping, drug
-                trafficking, money laundering, internet scam, advanced fee fraud
-                and other illegal.
+                The Adebisi Akande Foundation was established to address the
+                critical challenges facing Nigeria’s youth and women,
+                recognizing their untapped potential as the driving force for
+                national development. With over half of Nigeria’s population
+                under the age of 25, the country’s youthful demographic
+                represents both an opportunity and a challenge. Rising
+                unemployment, inadequate educational curricula, and limited
+                economic opportunities have left millions of young Nigerians
+                without the tools they need to thrive. Women, particularly, face
+                compounded barriers to productivity and empowerment.
+              </p>
+              <p>
+                In response, the Adebisi Akande Foundation is committed to
+                reversing these trends by fostering leadership, productivity,
+                and empowerment. Inspired by the values of Transparency,
+                Efficiency, and Accountability (TEA), which are hallmarks of
+                Chief Bisi Akande’s leadership legacy, the foundation also seeks
+                to address Nigeria’s growing leadership challenges. By promoting
+                these core values, the foundation aims to cultivate a generation
+                of leaders who exemplify integrity and patriotism, capable of
+                guiding the nation towards sustainable development.
+              </p>
+              <p>
+                Through its flagship programs—including leadership lectures,
+                entrepreneurship training, and youth mentorship—the foundation
+                bridges the gap between potential and opportunity. It not only
+                addresses unemployment and poverty but also showcases the TEA
+                legacy of Chief Akande, instilling a culture of excellence and
+                responsibility in the next generation of Nigerian leaders.
+              </p>
+              <p>
+                The Adebisi Akande Foundation stands as a beacon of hope,
+                nurturing responsible citizens and leaders committed to building
+                a brighter, more equitable future for all.
               </p>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="ftco-section" style={{ padding: "0 0 2em 0" }}>
+      <section className="ftco-section" style={{ padding: "2em 0 2em 0" }}>
         <div className="container">
+          <h1 className="mt-4 mb-4 text-center">
+            APLICATION PROCESS FOR THE EMERGING LEADERS FELLOWSHIP
+          </h1>
           <div className="row">
             <div className="col-md-4 d-flex align-self-stretch ftco-animate">
               <div className="media block-6 d-flex services p-3 py-4 d-block">
@@ -141,9 +151,10 @@ const Home = () => {
                 <div className="media-body pl-4">
                   <h3 className="heading">Virtual Interview</h3>
                   <p>
-                    Applicants will submit their CVs, two essays detailing their
-                    leadership experiences and future goals, and one letter of
-                    recommendation.
+                    Shortlisted candidates will participate in a virtual
+                    interview conducted by the selection panel. The interview
+                    will assess their leadership potential, communication
+                    skills, and alignment with the fellowship's mission.
                   </p>
                 </div>
               </div>
@@ -156,9 +167,11 @@ const Home = () => {
                 <div className="media-body pl-4">
                   <h3 className="heading">Final Selection</h3>
                   <p>
-                    Applicants will submit their CVs, two essays detailing their
-                    leadership experiences and future goals, and one letter of
-                    recommendation.
+                    The selection panel will carefully evaluate all applicants
+                    based on their application materials and interview
+                    performance. Finalists will be chosen for the fellowship
+                    based on their demonstrated leadership capacity, innovative
+                    ideas, and commitment to personal and community development.
                   </p>
                 </div>
               </div>

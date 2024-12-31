@@ -1,8 +1,6 @@
-import {FormControl, FormLabel, Input, Select, Text} from '@chakra-ui/react';
+import { Text } from "@chakra-ui/react";
 
 const FormSelect = ({
-  label,
-  labelStyle,
   value,
   onChange,
   placeholder,
@@ -10,30 +8,40 @@ const FormSelect = ({
   type,
   error,
   options,
+  label,
   ...rest
 }) => {
   return (
-    <FormControl id={id}>
-      <FormLabel {...labelStyle}>{label}</FormLabel>
-      <Select
-        border="1px solid"
-        borderColor={error ? '#F04438' : 'gray'}
+    <div style={{ width: "100%" }} id={id} className="form-group">
+      {label && (
+        <Text mb="0 !important" className="col-form-label">
+          {label}
+        </Text>
+      )}
+      <select
+        style={{
+          marginTop: "0 ",
+          width: "100%",
+          borderColor: error ? "#F04438" : "gray",
+          border: "1px solid",
+          ...rest,
+        }}
         type={type}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        {...rest}
+        className="form-control"
       >
-        {options.map(option => (
+        {(options || []).map((option) => (
           <option>{option}</option>
         ))}
-      </Select>
+      </select>
       {error && (
         <Text fontSize="10px" color="#F04438">
           {error}
         </Text>
       )}
-    </FormControl>
+    </div>
   );
 };
 

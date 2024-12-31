@@ -13,6 +13,7 @@ const FormTextarea = ({
     <div style={{ width: "100%" }} id={id} className="form-group">
       <textarea
         style={{
+          marginTop: "0 ",
           width: "100%",
           borderColor: error ? "#F04438" : "gray",
           border: "1px solid",
