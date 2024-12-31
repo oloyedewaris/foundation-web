@@ -127,7 +127,7 @@ const LeadershipsComp = () => {
                 </li>
                 <li>
                   <strong style={{ color: "#141414" }}>Deadline: </strong>
-                  January 7, 2025
+                  January 5, 2025
                 </li>
               </ul>
 
