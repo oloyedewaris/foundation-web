@@ -27,11 +27,13 @@ import uploadImage from "../utils/uploadImage.js";
 import FormTextarea from "./formTextarea.js";
 import FormSelect from "./formSelect.js";
 import { formatToCurrency } from "../utils/formatAmount.js";
+import { useNavigate } from "react-router-dom";
 
 const totalSteps = 7;
 
 const ApplicationForm = () => {
   const toast = useToast();
+  const navigate = useNavigate();
   const [loadingImage, setLoadingImage] = useState(false);
   const [step, setStep] = useState(1);
   const [isOther, setIsOther] = useState(false);
@@ -52,6 +54,7 @@ const ApplicationForm = () => {
     // social_handles: Yup.string().required("required"),
     is_indigene: Yup.string().required("required"),
     run_business: Yup.string().required("required"),
+    business_address: Yup.string().required("required"),
     business_document: Yup.string().required("required"),
     business_type: Yup.string().required("required"),
     business_name: Yup.string().required("required"),
@@ -64,6 +67,7 @@ const ApplicationForm = () => {
     fund_request: Yup.string().required("required"),
     fund_uses: Yup.string().required("required"),
     fund_impact: Yup.string().required("required"),
+    ever_receiver: Yup.string().required("required"),
     recommendation_name: Yup.string().required("required"),
     recommendation_contact: Yup.string().required("required"),
   });
@@ -71,12 +75,14 @@ const ApplicationForm = () => {
   const leadershipMutation = useMutation(addLeadershipBookingApi, {
     onSuccess: (res) => {
       toast({
-        description: "Application submitted succesfully",
+        title: "Application submitted",
+        description: "Your application has been submitted succesfully",
         status: "success",
         position: "top-right",
-        duration: 2000,
+        duration: 8000,
         isClosable: true,
       });
+      navigate("/");
     },
     onError: (err) => {
       toast({
@@ -102,6 +108,7 @@ const ApplicationForm = () => {
       social_handles: "",
       is_indigene: "",
       run_business: "",
+      business_address: "",
       business_document: "",
       business_type: "",
       business_name: "",
@@ -114,6 +121,7 @@ const ApplicationForm = () => {
       fund_request: "",
       fund_uses: "",
       fund_impact: "",
+      ever_receiver: "",
       recommendation_name: "",
       recommendation_contact: "",
     },
@@ -235,6 +243,7 @@ const ApplicationForm = () => {
       if (
         !formik.values.is_indigene ||
         !formik.values.run_business ||
+        !formik.values.business_address ||
         !formik.values.business_document
       ) {
         formik.handleSubmit();
@@ -264,7 +273,8 @@ const ApplicationForm = () => {
       if (
         !formik.values.fund_request ||
         !formik.values.fund_uses ||
-        !formik.values.fund_impact
+        !formik.values.fund_impact ||
+        !formik.values.ever_receiver
       ) {
         formik.handleSubmit();
       } else {
@@ -483,6 +493,19 @@ const ApplicationForm = () => {
               </Text>
             )}
           </VStack>
+          <FormInput
+            id="business_address"
+            type="text"
+            value={formik.values.business_address}
+            onBlur={formik.handleBlur}
+            error={
+              formik.touched.business_address && formik.errors.business_address
+            }
+            onChange={(e) =>
+              handleFieldChange("business_address", e.target.value)
+            }
+            placeholder="Your business address"
+          />
 
           <Center
             w="full"
@@ -620,6 +643,7 @@ const ApplicationForm = () => {
               handleFieldChange("business_stage", e.target.value)
             }
             options={[
+              "",
               "Early-stage (less than 1 year)",
               "Growth stage (1-3 years)",
               "Established (3+ years)",
@@ -727,6 +751,15 @@ const ApplicationForm = () => {
             error={formik.touched.fund_impact && formik.errors.fund_impact}
             onChange={(e) => handleFieldChange("fund_impact", e.target.value)}
             placeholder="How will this funding impact your business?"
+          />
+          <FormInput
+            id="ever_receiver"
+            type="phone"
+            value={formik.values.ever_receiver}
+            onBlur={formik.handleBlur}
+            error={formik.touched.ever_receiver && formik.errors.ever_receiver}
+            onChange={(e) => handleFieldChange("ever_receiver", e.target.value)}
+            label="Has your business received any other funding? Yes/No. If yes, give details"
           />
         </VStack>
       ),

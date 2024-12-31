@@ -10,8 +10,8 @@ const signedinUser =
   window?.JSON?.parse(localStorage.getItem("SignedInUser"));
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:4000/api/v1",
-  // baseURL: "https://foundation-server-631db6cad4dc.herokuapp.com/api/v1",
+  // baseURL: "http://localhost:4000/api/v1",
+  baseURL: "https://foundation-server-631db6cad4dc.herokuapp.com/api/v1",
   headers: { "Content-Type": "application/json" },
   timeout: 30 * 60 * 1000,
 });

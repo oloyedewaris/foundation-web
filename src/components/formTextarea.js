@@ -7,10 +7,16 @@ const FormTextarea = ({
   id,
   type,
   error,
+  label,
   ...rest
 }) => {
   return (
     <div style={{ width: "100%" }} id={id} className="form-group">
+      {label && (
+        <Text mb="0 !important" className="col-form-label">
+          {label}
+        </Text>
+      )}
       <textarea
         style={{
           marginTop: "0 ",
