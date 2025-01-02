@@ -104,7 +104,7 @@ const Admin = () => {
                     className="text p-4 d-block"
                   >
                     <h3 className="heading mb-4">
-                      <a href="#">{doc.heading}</a>
+                      <p>{doc.heading}</p>
                     </h3>
                     <p>{doc.body}</p>
                     <button
