@@ -18,3 +18,6 @@ export const fetchLeadershipBookingApi = async () => {
 export const fetchLeadershipBookingByLeadershipApi = async (id) => {
   return await axiosInstance.get(`/leadership-booking/${id}`);
 };
+export const downloadLeadershipBookingApi = async (id) => {
+  return await axiosInstance.get(`/leadership-booking/download`);
+};

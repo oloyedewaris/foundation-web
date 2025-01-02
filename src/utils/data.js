@@ -56,3 +56,22 @@ export const newsData = [
     image: "url('images/new-5.jpg')",
   },
 ];
+
+export const eventsData = [
+  {
+    title: `Tributes Pour In as Bisi Akande Celebrates 85th Birthday`,
+    description: `The city of Ibadan was agog on January 16th 2024 as eminent Nigerians converged at the International Conference Centre, University of Ibadan, to celebrate the 85th birthday of elder statesman Chief Bisi Akande and the official launch of the Adebisi Akande Foundation.`,
+    date: "January 17, 2024",
+    link: "https://thenationonlineng.net/torrents-of-tributes-for-bisi-akande-at-85th-birthday/",
+    id: "1",
+    image: "url('images/event-1.jpg')",
+  },
+  {
+    title: `Adebisi Akande Foundation: A New Era of Leadership and Empowerment`,
+    description: `The event of Chief Adebisi Akande 85th Birthday also marked the launch of the Adebisi Akande Foundation, an initiative aimed at addressing Nigeria’s leadership challenges and fostering youth and women empowerment. Chaired by renowned scholar Professor Olu Aina, the foundation seeks to instill Chief Akande’s core values of Transparency, Efficiency, and Accountability (TEA) through its flagship programs.`,
+    date: "December 22, 2024 ",
+    link: "https://thenationonlineng.net/akande-urges-empowerment-of-women-youths/",
+    id: "1",
+    image: "url('images/event-2.jpg')",
+  },
+];

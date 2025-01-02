@@ -1,17 +1,41 @@
 import { useDisclosure } from "@chakra-ui/react";
 import AddEvent from "../components/addEvent";
 import Layout from "../components/layout";
-import { useNavigate } from "react-router-dom";
 import AddLeadership from "../components/addLeadership";
+import axiosInstance from "../utils/axiosInstance";
 
 const Admin = () => {
-  const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
     isOpen: leadershipisOpen,
     onOpen: leadershiponOpen,
     onClose: leadershiponClose,
   } = useDisclosure();
+
+  const handleDownload = async () => {
+    try {
+      // Make a GET request to the backend endpoint
+      const response = await axiosInstance.get("/leadership-booking/download", {
+        responseType: "blob", // Important for downloading files
+      });
+
+      // Create a Blob from the response
+      const blob = new Blob([response.data], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      });
+
+      // Create a link element
+      const link = document.createElement("a");
+      link.href = window.URL.createObjectURL(blob);
+      link.download = "items.xlsx"; // File name
+      document.body.appendChild(link);
+      link.click(); // Programmatically click the link to start the download
+      document.body.removeChild(link); // Clean up
+    } catch (error) {
+      console.error("Error downloading the file:", error);
+      alert("An error occurred while downloading the file.");
+    }
+  };
 
   const adminActs = [
     {
@@ -22,16 +46,16 @@ const Admin = () => {
     },
     {
       heading: "Leadership Programs",
-      body: "You can create a new and manage leadership program",
-      btnText: "CREATE",
-      onClick: () => leadershiponOpen(),
+      body: "Download all application received in excel format",
+      btnText: "DOWNLOAD",
+      onClick: handleDownload,
     },
   ];
   return (
     <Layout>
       <div
         className="hero-wrap"
-        style={{ backgroundImage: "url('images/event-6.jpg')" }}
+        style={{ backgroundImage: "url('images/bg_7.jpg')" }}
         data-stellar-background-ratio="0.5"
       >
         <div className="overlay"></div>

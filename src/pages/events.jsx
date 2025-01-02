@@ -1,5 +1,6 @@
 import Layout from "../components/layout";
-import Events from "../components/events";
+// import Events from "../components/events";
+import { eventsData } from "../utils/data";
 
 const EventsComp = () => {
   return (
@@ -44,10 +45,39 @@ const EventsComp = () => {
           <div className="row justify-content-center mb-5 pb-3">
             <div className="col-md-5 heading-section ftco-animate text-center">
               <h2 className="mb-4">Our Recent Events</h2>
-              <p>Key Developments and Updates You Need to Know</p>
             </div>
           </div>
-          <Events />
+          <div className="row">
+            {eventsData?.map((doc) => (
+              <div className="col-md-4 d-flex ftco-animate">
+                <div
+                  className="blog-entry align-self-stretch"
+                  style={{ width: "100%" }}
+                >
+                  <div
+                    className="block-20"
+                    style={{ backgroundImage: doc.image }}
+                  ></div>
+                  <div className="text p-4 d-block">
+                    <div className="meta mb-3">
+                      {/* <div>{formatDateToString(doc.dateAndTime)}</div> */}
+                    </div>
+                    <h3 className="heading mb-4">{doc.title}</h3>
+                    <p className="time-loc">
+                      <span className="mr-2">
+                        <i className="icon-clock-o"></i> {doc.date}
+                      </span>
+                      <span>
+                        <i className="icon-map-o"></i> {doc.venue}
+                      </span>
+                    </p>
+                    <p>{doc.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* <Events /> */}
         </div>
       </section>
     </Layout>

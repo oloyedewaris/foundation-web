@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import { newsData } from "../utils/units";
+import { newsData } from "../utils/data";
 
 const News = () => {
   return (
