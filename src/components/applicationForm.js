@@ -842,7 +842,7 @@ const ApplicationForm = () => {
               Entrepreneurship Program. This program is open to indigenes of
               Ila-Orangun, Osun State, who have an existing business and are
               eager to grow it. Please complete all sections accurately. The
-              application timeline is December 30, 2024 - January 7, 2025.
+              application timeline is December 30, 2024 - January 5, 2025.
             </p>
             <Center
               flexDirection={"column"}
